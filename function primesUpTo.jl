@@ -4,9 +4,8 @@ function primesUpTo(limit::Integer)
     primes = Int64[2]
     πLim = convert( Int64, floor( limit / log(limit) ) )
     sizehint!(primes, πLim)
-    oddsElim = falses(limit-1 ÷ 2) # odds except 1
+    oddsElim = falses((limit-1) ÷ 2) # odds except 1
     i_max = (convert(Int64, floor(√limit))-1) ÷ 2
-
     for i = 1 : i_max
         if !oddsElim[i]
             n = 2i + 1
