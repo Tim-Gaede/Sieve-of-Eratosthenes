@@ -18,8 +18,8 @@ function primesUpTo(limit::Integer)
     i_max = (convert( Int64, floor(√limit) ) - 1) ÷ 2
     for i = 1 : i_max
         if oddsCandidates[i]
-            n = 2i + 1
-            for j = i+n : n : length(oddsCandidates)
+            o = 2i + 1 # Change in index number must be odd
+            for j = i+o : o : length(oddsCandidates)
                 oddsCandidates[j] = false
             end
         end
@@ -33,7 +33,6 @@ function primesUpTo(limit::Integer)
     primes
 end
 #-------------------------------------------------------------------------------
-
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
