@@ -12,7 +12,7 @@ function primesUpTo(limit::Integer)
     # oddsCandidates[index] represents the number, 2index + 1
     oddsCandidates = trues((limit-1) ÷ 2)
 
-    # Iterate through odd numbers from 3 to the square root of the limit.
+    # Iterate through the odd candidates up to the square root of the limit.
     # If that number is still a viable candidate then it must be prime
     # and its multiples must be eliminated as being prime.
     i_max = (convert( Int64, floor(√limit) ) - 1) ÷ 2
