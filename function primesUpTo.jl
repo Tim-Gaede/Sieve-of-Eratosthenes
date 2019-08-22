@@ -3,8 +3,8 @@ function primesUpTo(limit::Integer)
     if limit < 2;    return []; end
     primes = Int64[2]
 
-    # Use the prime counting function to set
-    # the amount of memory to allocate.
+    # To possibly speed up the function, use the prime counting function
+    # to set the amount of memory to allocate.
     sizehint!(primes, convert( Int64, floor( limit / log(limit) ) ))
 
     # Keep track of all odd numbers greater than 1
