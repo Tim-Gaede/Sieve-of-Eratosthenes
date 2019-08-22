@@ -18,7 +18,9 @@ function primesUpTo(limit::Integer)
     i_max = (convert( Int64, floor(√limit) ) - 1) ÷ 2
     for i = 1 : i_max
         if oddsCandidates[i]
-            o = 2i + 1 # Change in index number must be odd
+            # The jumps in the index number must be an odd multiple
+            # of the index of the newly discovered prime
+            o = 2i + 1
             for j = i+o : o : length(oddsCandidates)
                 oddsCandidates[j] = false
             end
@@ -33,6 +35,7 @@ function primesUpTo(limit::Integer)
     primes
 end
 #-------------------------------------------------------------------------------
+
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
