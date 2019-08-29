@@ -1,13 +1,13 @@
 #-------------------------------------------------------------------------------
-function primesUpTo(limit::Integer)
-    if limit < 2;    return []; end
+function primesUpTo(lim::Integer)
+    if lim < 2;    return []; end
     primes = Int64[2]
-    sizehint!(primes, convert( Int64, floor( limit / log(limit) ) ))
-    oddsAlive = trues((limit-1) ÷ 2) # oddsAlive[i] represents 2i + 1
+    sizehint!(primes, convert( Int64, floor( lim / log(lim) ) ))
+    oddsAlive = trues((lim-1) ÷ 2) # oddsAlive[i] represents 2i + 1
 
-    i_sqrt = (convert( Int64, floor(√limit) ) - 1) ÷ 2
+    i_sqrt = (convert( Int64, floor(√lim) ) - 1) ÷ 2
     for i = 1 : i_sqrt
-        if oddsAlive[i] # It's prime.  Kill odd multiples of it 
+        if oddsAlive[i] # It's prime.  Kill odd multiples of it
             push!(primes, 2i + 1)
             Δᵢ = 2i + 1
             for iₓ = i+Δᵢ : Δᵢ : length(oddsAlive);   oddsAlive[iₓ] = false; end
