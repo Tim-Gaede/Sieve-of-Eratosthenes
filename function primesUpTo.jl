@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-function primesUpTo(lim::Integer)
+ffunction primesTo(lim::Integer)
     if lim < 2;    return []; end
     primes = Int64[2]
     sizehint!(primes, convert( Int64, floor( lim / log(lim) ) ))
@@ -22,13 +22,11 @@ end
 #-------------------------------------------------------------------------------
 
 
-
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function main()
     println("\n"^2)
-    @time primes = primesUpTo(10^8)
+    @time primes = primesTo(10^8)
     println(typeof(primes))
 end
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 main()
