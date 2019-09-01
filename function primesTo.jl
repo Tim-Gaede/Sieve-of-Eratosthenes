@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-ffunction primesTo(lim::Integer)
+function primesTo(lim::Integer)
     if lim < 2;    return []; end
     primes = Int64[2]
     sizehint!(primes, convert( Int64, floor( lim / log(lim) ) ))
