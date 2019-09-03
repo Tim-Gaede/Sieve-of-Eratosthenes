@@ -1,6 +1,6 @@
 #───────────────────────────────────────────────────────────────────────────────
 function divisors!(n::Int, primes::Array{Int,1})
-# Returns an sorted list of all factors
+# Returns a sorted list of all divisors of n.
 # Will extend the array of primes iff it is inadequate for factorization
     if n  < 1;    throw("n must be greater than zero."); end
     if n == 1;    return [1]; end
