@@ -8,15 +8,15 @@ function primesTo(n::Integer)
     sizehint!(primes, convert( Int64, floor( n / log(n) ) ))
     oddsAlive = trues((n-1) ÷ 2) # oddsAlive[i] represents 2i + 1
 
-    i_sqrt = (convert( Int64, floor(√n) ) - 1) ÷ 2
-    for i = 1 : i_sqrt
+    i_lim = (convert( Int64, floor(√n) ) - 1) ÷ 2
+    for i = 1 : i_lim
         if oddsAlive[i] # It's prime.  Kill odd multiples of it
             push!(primes, 2i + 1)
             Δᵢ = 2i + 1
             for iₓ = i+Δᵢ : Δᵢ : length(oddsAlive);   oddsAlive[iₓ] = false; end
         end
     end
-    for i = i_sqrt + 1 : length(oddsAlive) # Surviving odds also prime
+    for i = i_lim + 1 : length(oddsAlive) # Surviving odds also prime
         if oddsAlive[i];    push!(primes, 2i + 1); end
     end
 
@@ -31,5 +31,3 @@ function main()
 end
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 main()
-
-
