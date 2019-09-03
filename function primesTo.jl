@@ -13,9 +13,8 @@ function divisors!(n::Int, primes::Array{Int,1})
     # extend it to double the adequate length.
     sqrt_n = convert(Int64, floor(√n))
     if sqrt_n ≥ last(primes)
-        primes′ = primesTo(2sqrt_n)
-        len = length(primes)
-        for i = len + 1 : length(primes′)
+        primes′ = primesTo(2sqrt_n) 
+        for i = length(primes) + 1 : length(primes′)
             push!(primes, primes′[i])
         end
     end
@@ -111,3 +110,4 @@ function main()
 end
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 main()
+
