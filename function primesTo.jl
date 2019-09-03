@@ -98,9 +98,16 @@ function primesTo(n::Integer)
     primes
 end
 #-------------------------------------------------------------------------------
-println("\n", "-"^40, "\n"^2)
-N = 5040
-primes = primesTo(3)
-println("Initial list of primes:\n\n$primes", "\n"^4)
-println("Divisors of $N:\n\n", divisors!(5040, primes), "\n"^4)
-println("Final list of primes:\n\n$primes", "\n"^4)
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function main()
+    println("\n", "-"^40, "\n"^2)
+    N = 5040
+    primes = primesTo(3)
+    println("Initial list of primes:\n\n$primes", "\n"^4)
+    println("Divisors of $N:\n\n", divisors!(5040, primes), "\n"^4)
+    println("Final list of primes:\n\n$primes", "\n"^4)
+end
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main()
