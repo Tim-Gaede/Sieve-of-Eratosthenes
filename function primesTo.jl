@@ -1,7 +1,7 @@
 #───────────────────────────────────────────────────────────────────────────────
 function divisors!(n::Int, primes::Array{Int,1})
 # Returns a sorted list of all divisors of n.
-# Will extend the array of primes iff it is inadequate for factorization
+# Will extend the array of primes IFF inadequate for factorization
     if n  < 1;    throw("n must be greater than zero."); end
     if n == 1;    return [1]; end
 
@@ -90,7 +90,7 @@ function primesTo(n::Integer)
             for iₓ = i+Δᵢ : Δᵢ : length(oddsAlive);   oddsAlive[iₓ] = false; end
         end
     end
-    for i = i_sqrt + 1 : length(oddsAlive) # Remaining living odds also prime
+    for i = i_sqrt + 1 : length(oddsAlive) # Surviving odds also prime
         if oddsAlive[i];    push!(primes, 2i + 1); end
     end
 
