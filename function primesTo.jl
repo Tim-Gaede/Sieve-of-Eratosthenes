@@ -12,8 +12,8 @@ function primesTo(n::Integer)
     for i = 1 : i_lim
         if oddsAlive[i] # It's prime.  Kill odd multiples of it
             push!(primes, 2i + 1)
-            Δᵢ = 2i + 1
-            for iₓ = i+Δᵢ : Δᵢ : length(oddsAlive);   oddsAlive[iₓ] = false; end
+            Δi = 2i + 1
+            for iₓ = i+Δi : Δi : length(oddsAlive);   oddsAlive[iₓ] = false; end
         end
     end
     for i = i_lim + 1 : length(oddsAlive) # Surviving odds also prime
